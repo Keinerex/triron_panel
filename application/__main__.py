@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from application.config import Settings, get_settings
-from application.endpoints import list_of_routes
+from config import Settings, get_settings
+from endpoints import list_of_routes
 
 from uvicorn import run
 
@@ -46,7 +46,7 @@ app = get_app()
 if __name__ == "__main__":
     settings_for_application = get_settings()
     run(
-        "application.__main__:app",
+        "__main__:app",
         port=settings_for_application.APP_PORT,
         reload=True,
         reload_dirs=["bookmarker", "tests"],

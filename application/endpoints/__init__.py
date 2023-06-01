@@ -1,7 +1,7 @@
-from application.endpoints.example import api_router as example
+from endpoints.user import api_router as auth
 
 list_of_routes = [
-    example,
+    auth,
 ]
 
 __all__ = [

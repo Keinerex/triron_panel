@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+passlib
+pydantic
+starlette
+python-jose[cryptography]
+python-jose[pycryptodome]
+python-jose
+python-multipart
+asyncpg

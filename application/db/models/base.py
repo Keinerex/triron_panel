@@ -2,7 +2,7 @@ from sqlalchemy import Column
 from sqlalchemy.sql import func
 from sqlalchemy.dialects.postgresql import TIMESTAMP, UUID
 
-from application.db import DeclarativeBase
+from db import DeclarativeBase
 
 
 class BaseModel(DeclarativeBase):
