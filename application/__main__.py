@@ -1,6 +1,9 @@
 from fastapi import FastAPI
+from sqlalchemy import select
 
 from config import Settings, get_settings
+from db.connection import get_session
+from db.models import Model
 from endpoints import list_of_routes
 
 from uvicorn import run
@@ -19,6 +22,10 @@ def get_app() -> FastAPI:
     Creates application and all dependable objects.
     """
     description = "Микросервис"
+
+    session = get_session()
+
+    session.scalar(select(Model))
 
     tags_metadata = [
         {

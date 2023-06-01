@@ -5,7 +5,9 @@ from sqlalchemy.dialects.postgresql import TIMESTAMP, UUID
 from db import DeclarativeBase
 
 
-class BaseModel(DeclarativeBase):
+class BaseTable(DeclarativeBase):
+    __abstract__ = True
+
     id = Column(
         UUID(as_uuid=False),
         primary_key=True,

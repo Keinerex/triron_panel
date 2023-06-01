@@ -24,8 +24,7 @@ api_router = APIRouter(
 )
 async def authentication(
         _: Request,
-        form_data: OAuth2PasswordRequestForm = Depends(),
-        session: AsyncSession = Depends(get_session)
+        form_data: OAuth2PasswordRequestForm = Depends()
 ):
     if not authenticate_user(username=form_data.username, password=form_data.password):
         raise HTTPException(
